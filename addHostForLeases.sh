@@ -23,7 +23,7 @@ lf=/var/lock/addHostForLeases.lock
 
 
 #if lock file exists exit
-[ -f $lf ] && exit
+[ -f $lf ] && echo "Lock file exists" && exit 1
 
 #creat lock file
 touch $lf
@@ -89,8 +89,8 @@ fi
 done < $dhcpparsed
 
 #Copy the dhcp_conf_copy to dhcp_conf_copy
-#mv $dhcpcopy $dhcpconf
-#rndc reload
+mv $dhcpcopy $dhcpconf
+rndc reload
 
 #delete the lock and temp files
 rm $lf
