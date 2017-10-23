@@ -89,9 +89,10 @@ fi
 done < $dhcpparsed
 
 #Copy the dhcp_conf_copy to dhcp_conf_copy
-#cp -p $dhcpcopy $dhcpconf
+#mv $dhcpcopy $dhcpconf
 #rndc reload
 
-#delete the lockfile
+#delete the lock and temp files
 rm $lf
+rm $dhcpparsed
 
