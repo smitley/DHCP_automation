@@ -2,29 +2,36 @@
 addHostForLeases.sh script finds hosts in the lease file and then creates static entries. 
 #Please make sure to set all of your variables correctly.
 
-#Set your lease file
-leases=dhcpleases
+Set your lease file
 
-#Set a place to set dhcp leases after they have been parsed 
-dhcpparsed=dhcpparsed
+leases=<variable>
 
-#Set your dhcp.conf
-dhcpconf=dhcp_conf
+Set a place to set dhcp leases after they have been parsed 
 
-#Set your dhcp copy
-dhcpcopy=dhcp_copy
+dhcpparsed=<variable>
 
-#Set lock file variable
-lf=/var/lock/addHostForLeases.lock
+Set your dhcp.conf
+
+dhcpconf=<variable>
+
+Set your dhcp copy
+
+dhcpcopy=<variable>
+
+Set lock file variable
+
+lf=<variable>
 
 
 deleteHost.sh script used to delete host from dhcp.conf file
 
 #Please make sure to set all of your variables correctly.
 
-#DHCP conf file
-dhcpconf=dhcp_conf_new
+DHCP conf file
 
-#DHCP copy file
-dhcpcopy=dhcp_copy
+dhcpconf=<variable>
+
+DHCP copy file
+
+dhcpcopy=<variable>
 
