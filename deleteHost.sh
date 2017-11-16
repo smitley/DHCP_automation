@@ -75,7 +75,7 @@ if  [ "${f}" == "true" ]; then
 		#Finds and the recored and removes it and places that output in a new file
 		sed "/$h {/,/^[[:space:]]*$/d" $dhcpconf > $dhcpcopy
 		#Copies to the orginal file
-		$dhcpcopy > $dhcpconf
+		cp -p $dhcpcopy $dhcpconf
 		rndc reload
 		
 	fi
