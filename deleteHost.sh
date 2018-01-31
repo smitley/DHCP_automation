@@ -7,7 +7,7 @@
 #version         :0.2    
 ####################################################
 #Set lock file variable
-lf=/var/lock/addHostForLeases.lock
+lf=/var/lock/addHostFromLeases.lock
 
 #DHCP conf file
 dhcpconf=dhcp_conf_new
