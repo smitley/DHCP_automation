@@ -1,6 +1,6 @@
 #!/bin/bash
 ####################################################
-#title           :addHostForLeases.sh
+#title           :addHostFromLeases.sh
 #description     :This script is used to add hosts from the lease file to dhcp.conf
 #author          :Brandon Smitley
 #date            :Last updated October 23, 2017
@@ -19,7 +19,7 @@ dhcpconf=dhcp_conf
 dhcpcopy=dhcp_copy
 
 #Set lock file variable
-lf=/var/lock/addHostForLeases.lock
+lf=/var/lock/addHostFromLeases.lock
 
 
 #if lock file exists exit
