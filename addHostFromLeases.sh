@@ -88,9 +88,25 @@ fi
 
 done < $dhcpparsed
 
-#Copy the dhcp_conf_copy to dhcp_conf_copy
+#Check to see if there is a change in dhcp config
+cmp -s test2 test1
+if [ "$?" != "0" ]; then
+
+today="$( date +"%Y%m%d-%H%M" )"
+
+#if there is a change get the date and time and make a backup
+bkp="dhcpd.conf-$today.bkp"
+
+mv $dhcpconf $bkp 
+
+#Keep 10 backups and remove the oldest one from there.
+ls -t *.bkp | sed  '1,10d'| xargs -d '\n' rm
+
+#Create the new DHCP conf
 mv $dhcpcopy $dhcpconf
-rndc reload
+fi
+
+#rndc reload
 
 #delete the lock and temp files
 rm $lf
